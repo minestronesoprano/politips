@@ -14,29 +14,29 @@ the_jinja_env = jinja2.Environment(
 # the handler section
 
 class MainPage(webapp2.RequestHandler):
-    def get(self): #for a get request
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('Hello, World!') #the response
+    def get(self):  # for a get request
+        welcome_template = the_jinja_env.get_template('templates/home-Politips.html')
+        self.response.write(welcome_template.render())  # the response
 
 class PersonHandler(webapp2.RequestHandler):
     def get(self):  # for a get request
-        welcome_template = the_jinja_env.get_template('templates/welcome.html')
+        welcome_template = the_jinja_env.get_template('templates/profile.html')
         self.response.write(welcome_template.render())  # the response
 
 class RegHandler(webapp2.RequestHandler):
     def get(self):  # for a get request
-        welcome_template = the_jinja_env.get_template('templates/welcome.html')
-        self.response.write(welcome_template.render())  # the response
+        register_template = the_jinja_env.get_template('templates/register.html')
+        self.response.write(register_template.render())  # the response
 
 class PollingHandler(webapp2.RequestHandler):
     def get(self):  # for a get request
-        welcome_template = the_jinja_env.get_template('templates/welcome.html')
-        self.response.write(welcome_template.render())  # the response
+        poll_template = the_jinja_env.get_template('templates/pollingplace.html')
+        self.response.write(poll_template.render())  # the response
 
 class EnterInfoHandler(webapp2.RequestHandler):
     def get(self):  # for a get request
-        welcome_template = the_jinja_env.get_template('templates/welcome.html')
-        self.response.write(welcome_template.render())  # the response
+        entry_template = the_jinja_env.get_template('templates/entry.html')
+        self.response.write(entry_template.render())  # the response
 
 # the app configuration section
 
