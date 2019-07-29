@@ -1,3 +1,8 @@
-.tags {
+.tags-banner {
+  display: flex;
   flex-direction: row;
+}
+
+.tags {
+  padding-left: 20px;
 }
