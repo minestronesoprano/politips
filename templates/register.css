@@ -1,0 +1,17 @@
+body{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#header{
+  text-align: center;
+  color: 	#1565c0;
+  font-size: 30px
+}
+#registration-rules{
+  font-style:normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height:1.67;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 25px 25px 25px 25px;
+}
