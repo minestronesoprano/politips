@@ -39,8 +39,11 @@ class EnterInfoHandler(webapp2.RequestHandler):
 		entry_template = the_jinja_env.get_template('templates/entry.html')
 		self.response.write(entry_template.render())  # the response
 
-# the app configuration section
+#class Statefinder(webapp2.RequestHandler):
+	#def post(self):
 
+
+# the app configuration section
 app = webapp2.WSGIApplication([
 	('/', MainPage),
 	('/candidate', PersonHandler),
