@@ -1,0 +1,19 @@
+.divis {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  align-items: baseline;
+}
+#states_drpdwn {
+  padding-top: 20px;
+}
+.input_boxes {
+ height: 20px;
+ font-size: 13px;
+ font: caption;
+}
+.headers {
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
