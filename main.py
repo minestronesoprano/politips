@@ -13,6 +13,7 @@ the_jinja_env = jinja2.Environment(
 	autoescape=True)
 
 
+cand_surname = getLastName("andrew_yang")
 # the handler section
 
 class MainPage(webapp2.RequestHandler):
