@@ -11,6 +11,7 @@ the_jinja_env = jinja2.Environment(
 	loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
 	extensions=['jinja2.ext.autoescape'],
 	autoescape=True)
+	
 
 # the handler section
 
@@ -21,8 +22,16 @@ class MainPage(webapp2.RequestHandler):
 
 class PersonHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
-		welcome_template = the_jinja_env.get_template('templates/profile.html')
-		self.response.write(welcome_template.render())  # the response
+		person_template = the_jinja_env.get_template('templates/profile.html')
+		cand = getCandidate()
+		profile_data = {
+		"first_name" = cand.first_name,
+		"last_name" = cand.last_name,
+		"party" = cand.party,
+		"previous_job_or_pos"= cand.previous_job_or_pos,
+		"state_of_origin" = cand.state_of_origin)
+		}
+		self.response.write(person_template.render(profile_data))  # the response
 
 class RegHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request

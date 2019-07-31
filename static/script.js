@@ -5,3 +5,8 @@ function getBody(content)
    var y = content.lastIndexOf("</body>");
    return content.slice(x + 1, y);
 }
+
+function getContent(content, target)
+{
+   target.innerHTML =  getBody(content);
+}
