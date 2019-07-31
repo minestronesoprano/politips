@@ -3,7 +3,7 @@
 import webapp2
 import jinja2
 import os
-from models import Candidate
+from classes import Candidate
 
 # This initializes the jinja2 Environment.
 # This will be the same in every app that uses the jinja2 templating library.
