@@ -8,6 +8,59 @@ class Candidate(ndb.Model):
     state_of_origin = ndb.StringProperty(required = True)
     picture = ndb.StringProperty(required = True)
 
+    # def getCandidate(self):
+    #     if(candidate_choice="donald_trump"):
+    #         return donald_trump
+    #     elif(candidate_choice="bill_weld"):
+    #         return bill_weld
+    #     elif(candidate_choice="michael_bennet"):
+    #         return michael_bennet
+    #     elif(candidate_choice="joe_biden"):
+    #         return joe_biden
+    #     elif(candidate_choice="cory_booker"):
+    #         return cory_booker
+    #     elif(candidate_choice="steve_bullock"):
+    #         return steve_bullock
+    #     elif(candidate_choice="pete_buttigieg"):
+    #         return pete_buttigieg
+    #     elif(candidate_choice="julian_castro"):
+    #         return julian_castro
+    #     elif(candidate_choice="bill_de_blasio"):
+    #         return bill_de_blasio
+    #     elif(candidate_choice="john_delany"):
+    #         return john_delany
+    #     elif(candidate_choice="tulsi_gabbard"):
+    #         return tulsi_gabbard
+    #     elif(candidate_choice="kirsten_gillibrand"):
+    #         return kirsten_gillibrand
+    #     elif(candidate_choice="kamala_harris"):
+    #         return kamala_harris
+    #     elif(candidate_choice="jay_inslee"):
+    #         return jay_inslee
+    #     elif(candidate_choice="amy_klobuchar"):
+    #         return amy_klobuchar
+    #     elif(candidate_choice="wayne_messam"):
+    #         return wayne_messam
+    #     elif(candidate_choice="seth_moulton"):
+    #         return seth_moulton
+    #     elif(candidate_choice="beto_orourke"):
+    #         return beto_orourke
+    #     elif(candidate_choice="tim_ryan"):
+    #         return tim_ryan
+    #     elif(candidate_choice="bernie_sanders"):
+    #         return bernie_sanders
+    #     elif(candidate_choice="joe_sestak"):
+    #         return joe_sestak
+    #     elif(candidate_choice="tom_steyer"):
+    #         return tom_steyer
+    #     elif(candidate_choice="elizabeth_warren"):
+    #         return elizabeth_warren
+    #     elif(candidate_choice="marianne_williamson"):
+    #         return marianne_williamson
+    #     elif(candidate_choice="andrew_yang"):
+    #         return andrew_yang
+    #     else
+    #         return Candidate(first_name = "Name", last_name = "Name", party = "Party", previous_job_or_pos= "Position", state_of_origin = "State")
 
 donald_trump = Candidate(first_name = "Donald", last_name = "Trump", party = "Republican", previous_job_or_pos= "President of America", state_of_origin = "New York", picture = "https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg")
 bill_weld = Candidate(first_name = "Bill", last_name = "Weld", party = "Republican", previous_job_or_pos= "Former Governor of Massachusetts", state_of_origin = "New York", picture="https://www.bostonherald.com/wp-content/uploads/migration/1969/12/31/3fb479ea-ec4e-11e8-906c-093cb180313d-e1548326775598.jpg?w=526")

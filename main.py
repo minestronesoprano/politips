@@ -12,6 +12,7 @@ the_jinja_env = jinja2.Environment(
 	extensions=['jinja2.ext.autoescape'],
 	autoescape=True)
 
+
 # the handler section
 
 class MainPage(webapp2.RequestHandler):
@@ -21,8 +22,16 @@ class MainPage(webapp2.RequestHandler):
 
 class PersonHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
-		welcome_template = the_jinja_env.get_template('templates/profile.html')
-		self.response.write(welcome_template.render())  # the response
+		person_template = the_jinja_env.get_template('templates/profile.html')
+		cand = getCandidate()
+		profile_data = {
+		"first_name" = cand.first_name,
+		"last_name" = cand.last_name,
+		"party" = cand.party,
+		"previous_job_or_pos"= cand.previous_job_or_pos,
+		"state_of_origin" = cand.state_of_origin)
+		}
+		self.response.write(person_template.render(profile_data))  # the response
 
 class RegHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
@@ -46,18 +55,7 @@ class EntryDone(webapp2.RequestHandler):
 		first_name = self.request.get("first_name")
 		meme_first_line = self.request.get('last_name')
 		meme_second_line = self.request.get('party')
-		meme_img_choice = self.request.get('meme-type')
-		pic_url = get_meme_url(meme_img_choice)
-		meme= Meme(first_line=meme_first_line, second_line=meme_second_line, pic_type=meme_img_choice, name=username)
-		meme.put()
-
-		meme_data={
-		"line1":meme_first_line,
-		"line2":meme_second_line,
-		"meme_type":meme_img_choice,
-		"user_name": username,
-		"img_url": pic_url
-		}
+		
 
 		self.response.write(results_template.render(meme_data))
 
