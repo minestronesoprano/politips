@@ -8,14 +8,19 @@
   color: Black;
   text-decoration: none;
 }
-
+.tags-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid;
+}
 .btn {
   /* background-color: #4CAF50; */
   color: Black;
   /* padding: 16px; */
-  font-size: 12px;
+  font-size: 15px;
   padding: 0px;
-  border: solid;
+  border: none;
   width: 120px;
   height: 35px;
   margin-right: 40px;
