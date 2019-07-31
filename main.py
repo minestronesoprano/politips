@@ -89,7 +89,8 @@ class PersonHandler(webapp2.RequestHandler):
 		"last_name" : cand.last_name,
 		"party" : cand.party,
 		"previous_job_or_pos": cand.previous_job_or_pos,
-		"state_of_origin" : cand.state_of_origin
+		"state_of_origin" : cand.state_of_origin,
+		"picture" :cand.picture
 		}
 		self.response.write(person_template.render(profile_data))  # the response
 
