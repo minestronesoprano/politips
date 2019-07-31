@@ -2,9 +2,6 @@ body{
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-#banner{
-  border-bottom: grey;
-}
 #header{
   text-align: center;
   color: 	#1565c0;
