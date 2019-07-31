@@ -114,5 +114,4 @@ app = webapp2.WSGIApplication([
 	('/candidate', PersonHandler),
 	('/register',RegHandler),
 	('/pollingplace',PollingHandler),
-	('/entry',EntryHandler)
 ], debug=True)
