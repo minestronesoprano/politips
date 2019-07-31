@@ -66,7 +66,7 @@ def getLastName(candidate_choice):
 	else:
 		return "Not Found"
 
-cand_surname = getLastName("donald_trump")
+cand_surname = getLastName("andrew_yang")
 # the handler section
 
 class ErrorHandler(webapp2.RequestHandler):
