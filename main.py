@@ -11,7 +11,7 @@ the_jinja_env = jinja2.Environment(
 	loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
 	extensions=['jinja2.ext.autoescape'],
 	autoescape=True)
-	
+
 
 # the handler section
 
@@ -55,18 +55,7 @@ class EntryDone(webapp2.RequestHandler):
 		first_name = self.request.get("first_name")
 		meme_first_line = self.request.get('last_name')
 		meme_second_line = self.request.get('party')
-		meme_img_choice = self.request.get('meme-type')
-		pic_url = get_meme_url(meme_img_choice)
-		meme= Meme(first_line=meme_first_line, second_line=meme_second_line, pic_type=meme_img_choice, name=username)
-		meme.put()
-
-		meme_data={
-		"line1":meme_first_line,
-		"line2":meme_second_line,
-		"meme_type":meme_img_choice,
-		"user_name": username,
-		"img_url": pic_url
-		}
+		
 
 		self.response.write(results_template.render(meme_data))
 
