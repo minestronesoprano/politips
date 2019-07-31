@@ -69,6 +69,12 @@ def getLastName(candidate_choice):
 cand_surname = getLastName("donald_trump")
 # the handler section
 
+class ErrorHandler(webapp2.RequestHandler):
+	def get(self):
+		error_template = the_jinja_env.get_template('templates/404.html')
+		if(self.get.status==404):
+			self.response.write(error_template.render())  # the response
+
 class MainPage(webapp2.RequestHandler):
 	def get(self):  # for a get request
 		welcome_template = the_jinja_env.get_template('templates/home-Politips.html')
@@ -97,24 +103,6 @@ class PollingHandler(webapp2.RequestHandler):
 		poll_template = the_jinja_env.get_template('templates/pollingplace.html')
 		self.response.write(poll_template.render())  # the response
 
-class EntryHandler(webapp2.RequestHandler):
-	def get(self):  # for a get request
-		entry_template = the_jinja_env.get_template('templates/entry.html')
-		self.response.write(entry_template.render())  # the response
-
-class EntryDone(webapp2.RequestHandler):
-	def post(self):
-		results_template = the_jinja_env.get_template('templates/results.html')
-
-		first_name = self.request.get("first_name")
-		meme_first_line = self.request.get('last_name')
-		meme_second_line = self.request.get('party')
-
-
-		self.response.write(results_template.render(meme_data))
-
-	def get(self):
-		return self.post()
 #class Statefinder(webapp2.RequestHandler):
 	#def post(self):
 
