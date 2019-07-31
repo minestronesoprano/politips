@@ -34,11 +34,35 @@ class PollingHandler(webapp2.RequestHandler):
 		poll_template = the_jinja_env.get_template('templates/pollingplace.html')
 		self.response.write(poll_template.render())  # the response
 
-class EnterInfoHandler(webapp2.RequestHandler):
+class EntryHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
 		entry_template = the_jinja_env.get_template('templates/entry.html')
 		self.response.write(entry_template.render())  # the response
 
+class EntryDone(webapp2.RequestHandler):
+	def post(self):
+		results_template = the_jinja_env.get_template('templates/results.html')
+
+		first_name = self.request.get("first_name")
+		meme_first_line = self.request.get('last_name')
+		meme_second_line = self.request.get('party')
+		meme_img_choice = self.request.get('meme-type')
+		pic_url = get_meme_url(meme_img_choice)
+		meme= Meme(first_line=meme_first_line, second_line=meme_second_line, pic_type=meme_img_choice, name=username)
+		meme.put()
+
+		meme_data={
+		"line1":meme_first_line,
+		"line2":meme_second_line,
+		"meme_type":meme_img_choice,
+		"user_name": username,
+		"img_url": pic_url
+		}
+
+		self.response.write(results_template.render(meme_data))
+
+	def get(self):
+		return self.post()
 #class Statefinder(webapp2.RequestHandler):
 	#def post(self):
 
@@ -49,5 +73,5 @@ app = webapp2.WSGIApplication([
 	('/candidate', PersonHandler),
 	('/register',RegHandler),
 	('/pollingplace',PollingHandler),
-	('/entry',EnterInfoHandler)
+	('/entry',EntryHandler)
 ], debug=True)
