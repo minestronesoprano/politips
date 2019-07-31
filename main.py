@@ -84,6 +84,7 @@ class PersonHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
 		person_template = the_jinja_env.get_template('templates/profile.html')
 		cand = Candidate.query().filter(Candidate.last_name==cand_surname).fetch()[0]
+		cand = getCandidate()
 		profile_data = {
 		"first_name" : cand.first_name,
 		"last_name" : cand.last_name,
@@ -91,6 +92,11 @@ class PersonHandler(webapp2.RequestHandler):
 		"previous_job_or_pos": cand.previous_job_or_pos,
 		"state_of_origin" : cand.state_of_origin,
 		"picture" :cand.picture
+		"first_name" = cand.first_name,
+		"last_name" = cand.last_name,
+		"party" = cand.party,
+		"previous_job_or_pos"= cand.previous_job_or_pos,
+		"state_of_origin" = cand.state_of_origin)
 		}
 		self.response.write(person_template.render(profile_data))  # the response
 
