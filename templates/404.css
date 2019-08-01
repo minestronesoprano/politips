@@ -1,0 +1,11 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  background:#9FDDFD
+}
+ #btn{
+   height: 30px;
+   width: 120px;
+   color: white;
+   background-color: red
+ }
