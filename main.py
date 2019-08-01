@@ -12,12 +12,10 @@ the_jinja_env = jinja2.Environment(
 	loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
 	extensions=['jinja2.ext.autoescape'],
 	autoescape=True)
-choice = ""
-# def getValue(selected_candidate):
-# 	choice = selected_candidate
+
 
 def getLastName(candidate_choice):
-	if(candidate_choice=="donald_trump"):
+	if(candidate_choice=="Donald Trump"):
 		return "Trump" #fix this line
 	elif(candidate_choice=="bill_weld"):
 		return "Weld"
@@ -74,15 +72,15 @@ def getLastName(candidate_choice):
 
 class BaseHandler(webapp2.RequestHandler):
   def handle_exception(self, exception, debug):
-    # Set a custom message.
-    self.response.write('An error occurred.')
+	# Set a custom message.
+	self.response.write('An error occurred.')
 
-    # If the exception is a HTTPException, use its error code.
-    # Otherwise use a generic 500 error code.
-    if isinstance(exception, webapp2.HTTPException):
-      self.response.set_status(exception.code)
-    else:
-      self.response.set_status(500)
+	# If the exception is a HTTPException, use its error code.
+	# Otherwise use a generic 500 error code.
+	if isinstance(exception, webapp2.HTTPException):
+	  self.response.set_status(exception.code)
+	else:
+	  self.response.set_status(500)
 
 class MainPage(webapp2.RequestHandler):
 	def get(self):  # for a get request
@@ -92,19 +90,24 @@ class MainPage(webapp2.RequestHandler):
 class PersonHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
 		person_template = the_jinja_env.get_template('templates/profile.html')
+
 		choice = self.request.get("name")
 		cand_surname = getLastName(choice)
 		#cand_surname= "Trump"
 		cand = Candidate.query().filter(Candidate.last_name==cand_surname).fetch()[0]
 		profile_data = {
-		"first_name" : cand.first_name,
-		"last_name" : cand.last_name,
-		"party" : cand.party,
-		"previous_job_or_pos": cand.previous_job_or_pos,
-		"state_of_origin" : cand.state_of_origin,
-		"picture" :cand.picture
+			"first_name" : cand.first_name,
+			"last_name" : cand.last_name,
+			"party" : cand.party,
+			"previous_job_or_pos": cand.previous_job_or_pos,
+			"state_of_origin" : cand.state_of_origin,
+			"picture" :cand.picture
 		}
 		self.response.write(person_template.render(profile_data))  # the response
+
+	def get(self):
+		person_template = the_jinja_env.get_template('templates/profile.html')
+		self.response.write(person_template.render())
 
 class RegHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
