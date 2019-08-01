@@ -69,11 +69,17 @@ def getLastName(candidate_choice):
 cand_surname = getLastName("andrew_yang")
 # the handler section
 
-class ErrorHandler(webapp2.RequestHandler):
-	def get(self):
-		error_template = the_jinja_env.get_template('templates/404.html')
-		if(self.get.status==404):
-			self.response.write(error_template.render())  # the response
+class BaseHandler(webapp2.RequestHandler):
+  def handle_exception(self, exception, debug):
+    # Set a custom message.
+    self.response.write('An error occurred.')
+
+    # If the exception is a HTTPException, use its error code.
+    # Otherwise use a generic 500 error code.
+    if isinstance(exception, webapp2.HTTPException):
+      self.response.set_status(exception.code)
+    else:
+      self.response.set_status(500)
 
 class MainPage(webapp2.RequestHandler):
 	def get(self):  # for a get request
@@ -107,6 +113,11 @@ class PollingHandler(webapp2.RequestHandler):
 #class Statefinder(webapp2.RequestHandler):
 	#def post(self):
 
+class ErrorHandler(BaseHandler):
+	def get(self):
+		error_template = the_jinja_env.get_template('templates/404.html')
+		self.response.set_status(404)
+		self.response.write(error_template.render())  # the response
 
 # the app configuration section
 app = webapp2.WSGIApplication([
