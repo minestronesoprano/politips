@@ -13,6 +13,7 @@ the_jinja_env = jinja2.Environment(
 	extensions=['jinja2.ext.autoescape'],
 	autoescape=True)
 
+choice = ""
 
 def getLastName(candidate_choice):
 	if(candidate_choice=="Donald Trump"):
@@ -90,10 +91,9 @@ class MainPage(webapp2.RequestHandler):
 class PersonHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
 		person_template = the_jinja_env.get_template('templates/profile.html')
-
 		choice = self.request.get("name")
-		cand_surname = getLastName(choice)
-		#cand_surname= "Trump"
+		#cand_surname = getLastName(choice)
+		cand_surname= "Trump"
 		cand = Candidate.query().filter(Candidate.last_name==cand_surname).fetch()[0]
 		profile_data = {
 			"first_name" : cand.first_name,
@@ -104,10 +104,6 @@ class PersonHandler(webapp2.RequestHandler):
 			"picture" :cand.picture
 		}
 		self.response.write(person_template.render(profile_data))  # the response
-
-	def get(self):
-		person_template = the_jinja_env.get_template('templates/profile.html')
-		self.response.write(person_template.render())
 
 class RegHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
