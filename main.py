@@ -11,7 +11,10 @@ the_jinja_env = jinja2.Environment(
 	loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
 	extensions=['jinja2.ext.autoescape'],
 	autoescape=True)
-
+choice = ""
+def getValue(selected_candidate):
+	choice = selected_candidate
+	return choice
 
 def getLastName(candidate_choice):
 	if(candidate_choice=="donald_trump"):
