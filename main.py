@@ -125,7 +125,7 @@ class PollingHandler(webapp2.RequestHandler):
 			"Florida" : "https://registration.elections.myflorida.com/CheckVoterStatus",
 			"Georgia" : "https://www.mvp.sos.ga.gov/MVP/mvp.do",
 			"Hawaii" : "https://olvr.hawaii.gov/altpollingplacesearch.aspx",
-			"Idaho" : "https://idahovotes.gov/",
+			"Idaho" : "https://apps.idahovotes.gov/YourPollingPlace/WhereDoIVote.aspx",
 			"Illinois" : "https://ova.elections.il.gov/PollingPlaceLookup.aspx",
 			"Indiana" : "https://indianavoters.in.gov/",
 			"Iowa" : "https://sos.iowa.gov/elections/voterreg/pollingplace/search.aspx",
