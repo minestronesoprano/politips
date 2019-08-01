@@ -5,6 +5,7 @@ import jinja2
 import os
 from classes import Candidate
 
+
 # This initializes the jinja2 Environment.
 # This will be the same in every app that uses the jinja2 templating library.
 the_jinja_env = jinja2.Environment(
@@ -12,9 +13,8 @@ the_jinja_env = jinja2.Environment(
 	extensions=['jinja2.ext.autoescape'],
 	autoescape=True)
 choice = ""
-def getValue(selected_candidate):
-	choice = selected_candidate
-	return choice
+# def getValue(selected_candidate):
+# 	choice = selected_candidate
 
 def getLastName(candidate_choice):
 	if(candidate_choice=="donald_trump"):
@@ -70,7 +70,6 @@ def getLastName(candidate_choice):
 	else:
 		return "Not Found"
 
-
 # the handler section
 
 class BaseHandler(webapp2.RequestHandler):
@@ -92,10 +91,10 @@ class MainPage(webapp2.RequestHandler):
 
 class PersonHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
-	def post(self):  # for a get request
 		person_template = the_jinja_env.get_template('templates/profile.html')
+		choice = self.request.get("name")
 		cand_surname = getLastName(choice)
-		# cand_surname= "Trump"
+		#cand_surname= "Trump"
 		cand = Candidate.query().filter(Candidate.last_name==cand_surname).fetch()[0]
 		profile_data = {
 		"first_name" : cand.first_name,
