@@ -66,7 +66,7 @@ def getLastName(candidate_choice):
 	else:
 		return "Not Found"
 
-cand_surname = getLastName("donald_trump")
+# cand_surname = getLastName("donald_trump")
 # the handler section
 
 class ErrorHandler(webapp2.RequestHandler):
@@ -81,8 +81,9 @@ class MainPage(webapp2.RequestHandler):
 		self.response.write(welcome_template.render())  # the response
 
 class PersonHandler(webapp2.RequestHandler):
-	def get(self):  # for a get request
+	def get(post):  # for a get request
 		person_template = the_jinja_env.get_template('templates/profile.html')
+		cand_surname = getLastName(self.request.get())
 		cand = Candidate.query().filter(Candidate.last_name==cand_surname).fetch()[0]
 		cand = getCandidate()
 		profile_data = {
@@ -92,11 +93,6 @@ class PersonHandler(webapp2.RequestHandler):
 		"previous_job_or_pos": cand.previous_job_or_pos,
 		"state_of_origin" : cand.state_of_origin,
 		"picture" :cand.picture
-		"first_name" = cand.first_name,
-		"last_name" = cand.last_name,
-		"party" = cand.party,
-		"previous_job_or_pos"= cand.previous_job_or_pos,
-		"state_of_origin" = cand.state_of_origin)
 		}
 		self.response.write(person_template.render(profile_data))  # the response
 
