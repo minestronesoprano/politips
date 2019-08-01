@@ -2,11 +2,25 @@ body{
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+.side{
+  width: 200px;
+}
+#top{
+  display: flex;
+  text-align: center;
+  background-color: #1565c0;
+}
 #header{
   text-align: center;
-  color: 	#1565c0;
-  font-size: 30px
+  color: 	white;
+  font-size: 30px;
+  margin:auto;
 }
+
+#header h1{
+  font-size: 60px
+}
+
 #registration-rules{
   font-style:normal;
   font-weight: 400;

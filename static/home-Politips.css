@@ -1,11 +1,26 @@
 body{
   font-family: 'Roboto Condensed', sans-serif;
 }
+
+#top{
+  display: flex;
+  text-align: center;
+  background-color: #1565c0;
+}
+.side{
+  width: 200px;
+}
 .banner{
   color:#1565c0;
   text-align: center;
   font-size: 25px;
+  margin:auto;
 }
+
+#fh1{
+  font-size: 60px
+}
+
 .tags {
   color: White;
   text-decoration: none;
