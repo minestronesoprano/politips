@@ -88,7 +88,7 @@ class MainPage(webapp2.RequestHandler):
 		self.response.write(welcome_template.render())  # the response
 
 class PersonHandler(webapp2.RequestHandler):
-	def get(self):  # for a get request
+	def get(post):  # for a get request
 		person_template = the_jinja_env.get_template('templates/profile.html')
 		cand_surname = getLastName(choice)
 		cand = Candidate.query().filter(Candidate.last_name==cand_surname).fetch()[0]

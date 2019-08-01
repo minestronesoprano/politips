@@ -14,11 +14,12 @@
 		<div class="tags-banner">
 			<button class="btn"><a class="tags"href="http://localhost:8080/"> Home</a></button>
 			<div class="dropdown-candidates">
-			<button class="btn">Candidates</button>
+			<!-- <button class="btn">Candidates</button> -->
+			<select class="choice" name="">
 			<form class="choice" action="profile.html" method="post">
 				<div class="dropdown-content">
-					<a onclick="getLastName(donald_trump)" href="http://localhost:8080/candidate">Donald Trump</a>
-					<!-- <option value="bill_weld">Bill Weld</option>
+					<!-- <a value="donald_trump" href="/Users/cssi/Documents/GitHub/politips/templates/profile.html">Donald Trump</a> -->
+					<option value="bill_weld">Bill Weld</option>
 					<option value="michael_bennet">Michael Bennet</option>
 					<option value="joe_biden">Joe Biden</option>
 					<option value="cory_booker">Cory Booker</option>
@@ -27,9 +28,10 @@
 					<option value="julian_castro">Julian Castro</option>
 					<option value="bill_de_blasio">Bill de Blasio</option>
 					<option value="john_delany">John Delany</option>
-					<option value="tulsi_gabbard">Tulsi Gabbard</option> -->
+					<option value="tulsi_gabbard">Tulsi Gabbard</option>
 				</div>
 			</form>
+		</select>
 			</div>
 			<button class="btn"><a class="tags"href="/register">Register To Vote<a></button>
 			<button class="btn"><a class="tags"href="/pollingplace">Find Your Polling Place<a></button>
