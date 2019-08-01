@@ -92,8 +92,8 @@ class PersonHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
 		person_template = the_jinja_env.get_template('templates/profile.html')
 		choice = self.request.get("name")
-		#cand_surname = getLastName(choice)
-		cand_surname= "Trump"
+		cand_surname = getLastName(choice)
+		# cand_surname= "Trump"
 		cand = Candidate.query().filter(Candidate.last_name==cand_surname).fetch()[0]
 		profile_data = {
 			"first_name" : cand.first_name,
