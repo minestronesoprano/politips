@@ -15,3 +15,35 @@ body{
   font-family: 'Roboto Condensed', sans-serif;
   margin: 25px 25px 25px 25px;
 }
+
+#navigation{
+
+  width: 100%;
+  display: flex;
+}
+
+#navigation ul{
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: red;
+  border: 2px solid #1565c0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#navigation li{
+  float: left;
+  width: 200px;
+  margin-left: 2px;
+}
+
+#navigation li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+}
