@@ -27,7 +27,7 @@ body{
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: red;
+  background-color: #DF0000;
   border: 2px solid #1565c0;
   width: 100%;
   display: flex;

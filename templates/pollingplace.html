@@ -1,76 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="../static/pollingplace.css">
-  <title>Find Your Voting Place!</title>
-</head>
-<body>
-  <script type="text/javascript" src="/static/script.js"></script>
-  <div class="divis">
-    <h4 class="headers">Choose Your State: </h4>
-    <form class="in_states" id="states_drpdwn" method="post" action="/pollingplace">
-      <select name="states_list">
-        <option value="whee"></option>
-        <option>Alabama</option>
-        <option>Alaska</option>
-        <option>Arizona</option>
-        <option>Arkansas</option>
-        <option>California</option>
-        <option>Colorado</option>
-        <option>Connecticut</option>
-        <option>Delaware</option>
-        <option>Florida</option>
-        <option>Georgia</option>
-        <option>Hawaii</option>
-        <option>Idaho</option>
-        <option>Illinois</option>
-        <option>Indiana</option>
-        <option>Iowa</option>
-        <option>Kansas</option>
-        <option>Kentucky</option>
-        <option>Louisiana</option>
-        <option>Maine</option>
-        <option>Maryland</option>
-        <option>Massachusetts</option>
-        <option>Michigan</option>
-        <option>Minnesota</option>
-        <option>Mississippi</option>
-        <option>Missouri</option>
-        <option>Montana</option>
-        <option>Nebraska</option>
-        <option>Nevada</option>
-        <option>New Hampshire</option>
-        <option>New Jersey</option>
-        <option>New Mexico</option>
-        <option>New York</option>
-        <option>North Carolina</option>
-        <option>North Dakota</option>
-        <option>Ohio</option>
-        <option>Oklahoma</option>
-        <option>Oregon</option>
-        <option>Pennsylvania</option>
-        <option>Rhode Island</option>
-        <option>South Carolina</option>
-        <option>South Dakota</option>
-        <option>Tennessee</option>
-        <option>Texas</option>
-        <option>Utah</option>
-        <option>Vermont</option>
-        <option>Virginia</option>
-        <option>Washington</option>
-        <option>West Virginia</option>
-        <option>Wisconsin</option>
-        <option>Wyoming</option>
-      </select>
-        <input type="submit" value="Go!">
-    </form>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/pollingplace.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <title>Find Your Voting Place!</title>
+  </head>
+  <body>
+    <img src="Screen Shot 2019-07-31 at 4.35.08 PM.png" alt="PoliTips Logo" width="100" height="100">
+    <section id="header">
+    <h1>Polling Place Locator</h1>
+  </section>
+  <section id="navigation">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="">Candidates</a></li>
+    <li><a href="/registration">Registration</a></li>
+    <li><a href="/pollingplace">Polling Place</a></li>
+    </section>
+    <div class="divis">
+      <h4 class="headers">Choose Your State: </h4>
+      <form class="in_states" id="states_drpdwn" method="post" action="">
+        <select name="states_list">
+          <option name="alabama">Alabama</option>
+          <option>Alaska</option>
+          <option>Arizona</option>
+          <option>Arkansas</option>
+          <option>California</option>
+          <option>Colorado</option>
+          <option>Connecticut</option>
+          <option>Delaware</option>
+          <option>Florida</option>
+          <option>Georgia</option>
+          <option>Hawaii</option>
+          <option>Idaho</option>
+          <option>Illinois</option>
+          <option>Indiana</option>
+          <option>Iowa</option>
+          <option>Kansas</option>
+          <option>Kentucky</option>
+          <option>Louisiana</option>
+          <option>Maine</option>
+          <option>Maryland</option>
+          <option>Massachusetts</option>
+          <option>Michigan</option>
+          <option>Minnesota</option>
+          <option>Mississippi</option>
+          <option>Missouri</option>
+          <option>Montana</option>
+          <option>Nebraska</option>
+          <option>Nevada</option>
+          <option>New Hampshire</option>
+          <option>New Jersey</option>
+          <option>New Mexico</option>
+          <option>New York</option>
+          <option>North Carolina</option>
+          <option>North Dakota</option>
+          <option>Ohio</option>
+          <option>Oklahoma</option>
+          <option>Oregon</option>
+          <option>Pennsylvania</option>
+          <option>Rhode Island</option>
+          <option>South Carolina</option>
+          <option>South Dakota</option>
+          <option>Tennessee</option>
+          <option>Texas</option>
+          <option>Utah</option>
+          <option>Vermont</option>
+          <option>Virginia</option>
+          <option>Washington</option>
+          <option>West Virginia</option>
+          <option>Wisconsin</option>
+          <option>Wyoming</option>
+        </select>
+      </form>
+    </div>
+    <div class="">
+      <iframe frameborder="0" scrolling="yes" width="100%" height="800"
+      src="{{state_url}}" name="myframe" id="myframe">
+      <p>iframes are not supported by your browser.</p>
+    </iframe>
   </div>
-  <div class="">
-    <iframe frameborder="0" scrolling="yes" width="100%" height="800"
-    src="{{state_url}}" name="myframe" id="myframe">
-    <p>iframes are not supported by your browser.</p>
-  </iframe>
-</div>
-</body>
+  </body>
 </html>

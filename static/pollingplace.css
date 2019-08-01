@@ -1,3 +1,19 @@
+body{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+#header{
+  color:#1565c0;
+  text-align: center;
+  font-size: 25px;
+}
+
+.headers{
+  color: 	#DF0000;
+  font-size: 20px;
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .divis {
   display: flex;
   flex-direction: row;
@@ -12,8 +28,35 @@
  font-size: 13px;
  font: caption;
 }
-.headers {
-  padding: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
+
+#navigation{
+
+  width: 100%;
+  display: flex;
+}
+
+#navigation ul{
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #DF0000;
+  border: 2px solid #1565c0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#navigation li{
+  float: left;
+  width: 200px;
+  margin-left: 2px;
+}
+
+#navigation li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
 }

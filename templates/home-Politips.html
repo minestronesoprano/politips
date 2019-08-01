@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>PoliTips</title>
 		<link rel="stylesheet" href="../static/home-Politips.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div class="banner">
@@ -11,13 +12,22 @@
 			<h2>Let's Get Political!</h4>
 		</div>
 		<div class="tags-banner">
-			<button class="btn"><a class="tags"href="/"> Home</a></button>
+			<button class="btn"><a class="tags"href="http://localhost:8080/"> Home</a></button>
 			<div class="dropdown-candidates">
 			<button class="btn">Candidates</button>
 			<form class="choice" action="profile.html" method="post">
 				<div class="dropdown-content">
-					<button type="submit" value="donald_trump">Donald Trump</button>
-					<button type="submit" value="donald_trump">Donald Trump</button>
+					<a onclick="getLastName(donald_trump)" href="http://localhost:8080/candidate">Donald Trump</a>
+					<!-- <option value="bill_weld">Bill Weld</option>
+					<option value="michael_bennet">Michael Bennet</option>
+					<option value="joe_biden">Joe Biden</option>
+					<option value="cory_booker">Cory Booker</option>
+					<option value="steve_bullock">Steve Bullock</option>
+					<option value="pete_buttigieg">Pete Buttigieg</option>
+					<option value="julian_castro">Julian Castro</option>
+					<option value="bill_de_blasio">Bill de Blasio</option>
+					<option value="john_delany">John Delany</option>
+					<option value="tulsi_gabbard">Tulsi Gabbard</option> -->
 				</div>
 			</form>
 			</div>
