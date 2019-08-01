@@ -12,6 +12,7 @@ the_jinja_env = jinja2.Environment(
 	extensions=['jinja2.ext.autoescape'],
 	autoescape=True)
 
+
 def getLastName(candidate_choice):
 	if(candidate_choice=="donald_trump"):
 		return "Trump" #fix this line
@@ -66,7 +67,7 @@ def getLastName(candidate_choice):
 	else:
 		return "Not Found"
 
-cand_surname = getLastName("donald_trump")
+
 # the handler section
 
 class BaseHandler(webapp2.RequestHandler):
@@ -89,8 +90,8 @@ class MainPage(webapp2.RequestHandler):
 class PersonHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
 		person_template = the_jinja_env.get_template('templates/profile.html')
+		cand_surname = getLastName(choice)
 		cand = Candidate.query().filter(Candidate.last_name==cand_surname).fetch()[0]
-		cand = getCandidate()
 		profile_data = {
 		"first_name" : cand.first_name,
 		"last_name" : cand.last_name,
@@ -98,11 +99,6 @@ class PersonHandler(webapp2.RequestHandler):
 		"previous_job_or_pos": cand.previous_job_or_pos,
 		"state_of_origin" : cand.state_of_origin,
 		"picture" :cand.picture
-		"first_name" = cand.first_name,
-		"last_name" = cand.last_name,
-		"party" = cand.party,
-		"previous_job_or_pos"= cand.previous_job_or_pos,
-		"state_of_origin" = cand.state_of_origin)
 		}
 		self.response.write(person_template.render(profile_data))  # the response
 
@@ -112,10 +108,22 @@ class RegHandler(webapp2.RequestHandler):
 		self.response.write(register_template.render())  # the response
 
 class PollingHandler(webapp2.RequestHandler):
-	def get(self):  # for a get request
+	def post(self):  # for a get request
+		poll_template = the_jinja_env.get_template('templates/pollingplace.html')
+		state_data ={
+			"Massachusetts" : "https://www.sec.state.ma.us/wheredoivotema/bal/myelectioninfo.aspx",
+			"New Jersey" : "https://voter.njsvrs.com/PublicAccess/servlet/com.saber.publicaccess.control.PublicAccessNavigationServlet?USERPROCESS=PollingPlace",
+			"whee" : "about:blank"
+		}
+		state = self.request.get("states_list")
+		vars = {
+		"state_url" : state_data[state]
+		}
+		self.response.write(poll_template.render(vars))  # the response
+
+	def get(self):
 		poll_template = the_jinja_env.get_template('templates/pollingplace.html')
 		self.response.write(poll_template.render())  # the response
-
 #class Statefinder(webapp2.RequestHandler):
 	#def post(self):
 
