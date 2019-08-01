@@ -92,6 +92,7 @@ class MainPage(webapp2.RequestHandler):
 
 class PersonHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
+	def post(self):  # for a get request
 		person_template = the_jinja_env.get_template('templates/profile.html')
 		cand_surname = getLastName(choice)
 		# cand_surname= "Trump"
@@ -126,7 +127,7 @@ class PollingHandler(webapp2.RequestHandler):
 			"Florida" : "https://registration.elections.myflorida.com/CheckVoterStatus",
 			"Georgia" : "https://www.mvp.sos.ga.gov/MVP/mvp.do",
 			"Hawaii" : "https://olvr.hawaii.gov/altpollingplacesearch.aspx",
-			"Idaho" : "https://idahovotes.gov/",
+			"Idaho" : "https://apps.idahovotes.gov/YourPollingPlace/WhereDoIVote.aspx",
 			"Illinois" : "https://ova.elections.il.gov/PollingPlaceLookup.aspx",
 			"Indiana" : "https://indianavoters.in.gov/",
 			"Iowa" : "https://sos.iowa.gov/elections/voterreg/pollingplace/search.aspx",
@@ -149,7 +150,7 @@ class PollingHandler(webapp2.RequestHandler):
 			"New York" : "https://voterlookup.elections.ny.gov/",
 			"North Carolina" : "https://vt.ncsbe.gov/PPLkup/",
 			"North Dakota" : "https://vip.sos.nd.gov/wheretovote.aspx",
-			"Ohio" : " https://vip.sos.nd.gov/wheretovote.aspx",
+			"Ohio" : "https://www.sos.state.oh.us/elections/voters/toolkit/polling-location/",
 			"Oklahoma" : "https://services.okelections.us/voterSearch.aspx",
 			"Oregon" : "http://sos.oregon.gov/voting/Pages/drop-box-locator.aspx",
 			"Pennsylvania" : "https://www.pavoterservices.state.pa.us/Pages/PollingPlaceInfo.aspx",
