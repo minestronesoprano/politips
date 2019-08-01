@@ -87,6 +87,7 @@ class MainPage(webapp2.RequestHandler):
 		self.response.write(welcome_template.render())  # the response
 
 class PersonHandler(webapp2.RequestHandler):
+	def get(self):  # for a get request
 	def post(self):  # for a get request
 		person_template = the_jinja_env.get_template('templates/profile.html')
 		name = self.request.get("cand_select_name")
@@ -149,7 +150,7 @@ class PollingHandler(webapp2.RequestHandler):
 			"New York" : "https://voterlookup.elections.ny.gov/",
 			"North Carolina" : "https://vt.ncsbe.gov/PPLkup/",
 			"North Dakota" : "https://vip.sos.nd.gov/wheretovote.aspx",
-			"Ohio" : " https://vip.sos.nd.gov/wheretovote.aspx",
+			"Ohio" : "https://www.sos.state.oh.us/elections/voters/toolkit/polling-location/",
 			"Oklahoma" : "https://services.okelections.us/voterSearch.aspx",
 			"Oregon" : "http://sos.oregon.gov/voting/Pages/drop-box-locator.aspx",
 			"Pennsylvania" : "https://www.pavoterservices.state.pa.us/Pages/PollingPlaceInfo.aspx",

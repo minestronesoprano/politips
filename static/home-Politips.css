@@ -6,15 +6,8 @@ body{
   text-align: center;
   font-size: 25px;
 }
-
-.tags-banner {
-  display: flex;
-  flex-direction: row;
-}
-
 .tags {
-  /* padding-left: 20px; */
-  color: Black;
+  color: White;
   text-decoration: none;
 }
 .tags-banner {
@@ -22,17 +15,19 @@ body{
   flex-direction: row;
   justify-content: space-between;
   border: solid;
+  border-color: #1565c0;
+  background-color: #DF0000;
+  height: 40px;
 }
 .btn {
-  /* background-color: #4CAF50; */
-  color: Black;
-  /* padding: 16px; */
+  color: white;
   font-size: 15px;
   padding: 0px;
   border: none;
   width: 120px;
   height: 35px;
   margin-right: 40px;
+
 }
 
 .dropdown-candidates {
@@ -59,8 +54,6 @@ body{
 
 button {
      background:none;
-     color:inherit;
-     border:none;
      padding: 12px 16px;
      font: inherit;
      border-bottom:1px solid #444;
