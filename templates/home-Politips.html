@@ -14,9 +14,10 @@
 		<div class="tags-banner">
 			<button class="btn"><a class="tags"href="http://localhost:8080/"> Home</a></button>
 			<div class="dropdown-candidates">
-			<button class="btn" method="post" action="/profile" >Candidates</button>
+			<button class="btn">Candidates</button>
+			<form class="choice" action="profile.html" method="post">
 				<div class="dropdown-content">
-					<a href="/Users/cssi/Documents/GitHub/politips/templates/profile.html">Donald Trump</a>
+					<a value="donald_trump">Donald Trump</a>
 					<option value="bill_weld">Bill Weld</option>
 					<option value="michael_bennet">Michael Bennet</option>
 					<option value="joe_biden">Joe Biden</option>
@@ -28,6 +29,7 @@
 					<option value="john_delany">John Delany</option>
 					<option value="tulsi_gabbard">Tulsi Gabbard</option>
 				</div>
+			</form>
 			</div>
 			<button class="btn"><a class="tags"href="/register">Register To Vote<a></button>
 			<button class="btn"><a class="tags"href="/pollingplace">Find Your Polling Place<a></button>

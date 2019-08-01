@@ -22,7 +22,8 @@
       <h4 class="headers">Choose Your State: </h4>
       <form class="in_states" id="states_drpdwn" method="post" action="">
         <select name="states_list">
-          <option name="alabama">Alabama</option>
+          <option value="whee"></option>
+          <option>Alabama</option>
           <option>Alaska</option>
           <option>Arizona</option>
           <option>Arkansas</option>
@@ -73,16 +74,14 @@
           <option>Wisconsin</option>
           <option>Wyoming</option>
         </select>
+        <input type="submit" value="Go!">
       </form>
     </div>
-    <div class="divis">
-      <h4 class="headers">City: </h4>
-      <input class="input_boxes" type="text">
-      <br>
-      <h4 class="headers">Street Address</h4>
-      <input class="input_boxes" type="text">
-      <br>
-      <input type="submit" value="Go!">
-    </div>
+    <div class="">
+      <iframe frameborder="0" scrolling="yes" width="100%" height="800"
+      src="{{state_url}}" name="myframe" id="myframe">
+      <p>iframes are not supported by your browser.</p>
+    </iframe>
+  </div>
   </body>
 </html>
