@@ -2,19 +2,69 @@
 <html lang="en" dir="ltr">
 <head>
 	<meta charset="utf-8">
-	<title>{{first_name}} {{last_name}}</title>
-	<link rel="stylesheet" href="../static/profile.css">
+	<link rel="stylesheet" href="../static/register.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+	<title>Registering To Vote</title>
 </head>
 <body>
-	<div>
+	<div id="top">
+	<div class="side"><img src="../static/Screen Shot 2019-07-31 at 4.35.08 PM.png" alt="PoliTips Logo" width="150" height="150"></div>
+	<section id="header">
+		<h1><b>Political Candidates</b></h1>
+		<h4>United States Presidential Election 2020</h4>
+	</section>
+	<div class="side"></div>
+</div>
+<section id="navigation">
+<ul>
+	<li><a href="/">Home</a></li>
+	<li><a href="/candidate">Candidates</a></li>
+	<li><a href="/register">Registration Rules</a></li>
+	<li><a href="/pollingplace">Polling Place</a></li>
+	</section>
+
+	<form class="in_states" id="states_drpdwn" method="post" action="">
+		<select name="cands_list">
+			<option></option>
+			<option>Michael Bennet</option>
+			<option>Joe Biden</option>
+			<option>Cory Booker</option>
+			<option>Steve Bullock</option>
+			<option>Pete Buttigieg</option>
+			<option>Julian Castro</option>
+			<option>Bill de Blasio</option>
+			<option>John Delany</option>
+			<option>Tulsi Gabbard</option>
+			<option>Kirsten Gillibrand</option>
+			<option>Kamala Harris</option>
+			<option>Jay Inslee</option>
+			<option>Amy Klobuchar</option>
+			<option>Wayne Messam</option>
+			<option>Seth Moulton</option>
+			<option>Beto O'Rourke</option>
+			<option>Tim Ryan</option>
+			<option>Bernie Sanders</option>
+			<option>Joe Sestak</option>
+			<option>Tom Steyer</option>
+			<option>Donald Trump</option>
+			<option>Elizabeth Warren</option>
+			<option>Bill Weld</option>
+			<option>Marianne Williamson</option>
+			<option>Andrew Yang</option>
+		</select>
+		<input type="submit" value="Go!">
+	</form>
+	<div style="margin:auto;align-content:center">
 		<div class="title">
 			<h1>{{first_name}} {{last_name}}</h1>
 			<div class="profile_info">
-				<div class="info">
-				</div>
 				<div class="candidate_picture">
-					<img src="{{picture}}" alt="">
+					<img src="{{picture}}" alt="" height="200px">
+				</div>
+				<div class="info">
+					<h2>Political Party: {{party}}</h2>
+					<h3>State: {{state_of_origin}}</h3>
+					<h3>Previous Position: {{previous_job_or_pos}}</h3>
 				</div>
 			</div>
 		</div>

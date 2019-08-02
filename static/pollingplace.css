@@ -1,10 +1,20 @@
 body{
   font-family: 'Roboto Condensed', sans-serif;
 }
+
+#top{
+  display: flex;
+  text-align: center;
+  background-color: #1565c0;
+}
+.side{
+  width: 200px;
+}
 #header{
   color:#1565c0;
   text-align: center;
-  font-size: 25px;
+  font-size: 50px;
+  margin:auto;
 }
 
 .headers{
