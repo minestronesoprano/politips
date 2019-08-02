@@ -17,6 +17,8 @@ the_jinja_env = jinja2.Environment(
 def getLastName(candidate_choice):
 	if(candidate_choice=="Donald Trump"):
 		return "Trump" #fix this line
+	elif(candidate_choice=="whee"):
+		return "Grinch"
 	elif(candidate_choice=="Bill Weld"):
 		return "Weld"
 	elif(candidate_choice=="Michael Bennet"):

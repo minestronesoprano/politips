@@ -34,6 +34,7 @@ tom_steyer = Candidate(first_name = "Tom", last_name = "Steyer", party = "Democr
 elizabeth_warren = Candidate(first_name = "Elizabeth", last_name = "Warren", party = "Democrat", previous_job_or_pos= "United States Senate from Massachusetts", state_of_origin = "Massachusetts", picture="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTM5Nzc3OTE4ODQxNjYwNDI3/elizabeth-warren-official-portraitjpg.jpg")
 marianne_williamson = Candidate(first_name = "Marianne", last_name = "Williamson", party = "Democrat", previous_job_or_pos= "Author", state_of_origin = "California", picture="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLWJ7g3Db-_SpxJHzsXfOoR8ltRDjRQOckkxjjQvmDBMSO8Tsyiw")
 andrew_yang = Candidate(first_name = "Andrew", last_name = "Yang", party = "Democrat", previous_job_or_pos= "Entrepreneur", state_of_origin = "New York", picture="https://assets3.thrillist.com/v1/image/2832187/size/sk-2017_04_featured_listing_mobile.jpg")
+empty = Candidate(first_name="The", last_name="Grinch", party="Unaffiliated", previous_job_or_pos="Christmas-Stealer", state_of_origin="Whoville", picture="../static/grinch.jpg")
 
 donald_trump.put()
 bill_weld.put()
@@ -60,3 +61,4 @@ tom_steyer.put()
 elizabeth_warren.put()
 marianne_williamson.put()
 andrew_yang.put()
+empty.put()
