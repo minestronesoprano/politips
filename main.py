@@ -98,7 +98,10 @@ class PersonHandler(webapp2.RequestHandler):
 			"party" : cand.party,
 			"previous_job_or_pos": cand.previous_job_or_pos,
 			"state_of_origin" : cand.state_of_origin,
-			"picture" :cand.picture
+			"picture" :cand.picture,
+			"p":"Political Party: ",
+			"s":"State: ",
+			"r":"Previous Position: "
 		}
 		self.response.write(person_template.render(profile_data))  # the response
 
