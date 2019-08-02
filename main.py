@@ -13,58 +13,57 @@ the_jinja_env = jinja2.Environment(
 	extensions=['jinja2.ext.autoescape'],
 	autoescape=True)
 
-choice = ""
 
 def getLastName(candidate_choice):
 	if(candidate_choice=="Donald Trump"):
 		return "Trump" #fix this line
-	elif(candidate_choice=="bill_weld"):
+	elif(candidate_choice=="Bill Weld"):
 		return "Weld"
-	elif(candidate_choice=="michael_bennet"):
+	elif(candidate_choice=="Michael Bennet"):
 		return "Bennet"
-	elif(candidate_choice=="joe_biden"):
+	elif(candidate_choice=="Joe Biden"):
 		return "Biden"
-	elif(candidate_choice=="cory_booker"):
+	elif(candidate_choice=="Cory Booker"):
 		return "Booker"
-	elif(candidate_choice=="steve_bullock"):
+	elif(candidate_choice=="Steve Bullock"):
 		return "Bullock"
-	elif(candidate_choice=="pete_buttigieg"):
+	elif(candidate_choice=="Pete Buttigieg"):
 		return "Buttigieg"
-	elif(candidate_choice=="julian_castro"):
+	elif(candidate_choice=="Julian Castro"):
 		return "Castro"
-	elif(candidate_choice=="bill_de_blasio"):
+	elif(candidate_choice=="Bill de Blasio"):
 		return "de Blasio"
-	elif(candidate_choice=="john_delany"):
+	elif(candidate_choice=="John Delany"):
 		return "Delany"
-	elif(candidate_choice=="tulsi_gabbard"):
+	elif(candidate_choice=="Tulsi Gabbard"):
 		return "Gabbard"
-	elif(candidate_choice=="kirsten_gillibrand"):
+	elif(candidate_choice=="Kirsten Gillibrand"):
 		return "Gillibrand"
-	elif(candidate_choice=="kamala_harris"):
+	elif(candidate_choice=="Kamala Harris"):
 		return "Harris"
-	elif(candidate_choice=="jay_inslee"):
+	elif(candidate_choice=="Jay Inslee"):
 		return "Inslee"
-	elif(candidate_choice=="amy_klobuchar"):
+	elif(candidate_choice=="Amy Klobuchar"):
 		return "Klobuchar"
-	elif(candidate_choice=="wayne_messam"):
+	elif(candidate_choice=="Wayne Messam"):
 		return "Messam"
-	elif(candidate_choice=="seth_moulton"):
+	elif(candidate_choice=="Seth Moulton"):
 		return "Moulton"
-	elif(candidate_choice=="beto_orourke"):
+	elif(candidate_choice=="Beto O'Rourke"):
 		return "O'Rourke"
-	elif(candidate_choice=="tim_ryan"):
+	elif(candidate_choice=="Tim Ryan"):
 		return "Ryan"
-	elif(candidate_choice=="bernie_sanders"):
+	elif(candidate_choice=="Bernie Sanders"):
 		return "Sanders"
-	elif(candidate_choice=="joe_sestak"):
+	elif(candidate_choice=="Joe Sestak"):
 		return "Sestak"
-	elif(candidate_choice=="tom_steyer"):
+	elif(candidate_choice=="Tom Steyer"):
 		return "Steyer"
-	elif(candidate_choice=="elizabeth_warren"):
+	elif(candidate_choice=="Elizabeth Warren"):
 		return "Warren"
-	elif(candidate_choice=="marianne_williamson"):
+	elif(candidate_choice=="Marianne Williamson"):
 		return "Williamson"
-	elif(candidate_choice=="andrew_yang"):
+	elif(candidate_choice=="Andrew Yang"):
 		return "Yang"
 	else:
 		return "Not Found"
@@ -89,12 +88,10 @@ class MainPage(webapp2.RequestHandler):
 		self.response.write(welcome_template.render())  # the response
 
 class PersonHandler(webapp2.RequestHandler):
-	def get(self):  # for a get request
+	def post(self):  # for a get request
 		person_template = the_jinja_env.get_template('templates/profile.html')
-		choice = self.request.get("name")
-		#cand_surname = getLastName(choice)
-		cand_surname= "Trump"
-		cand = Candidate.query().filter(Candidate.last_name==cand_surname).fetch()[0]
+		cand_name = getLastName(self.request.get("cands_list"))
+		cand = Candidate.query().filter(Candidate.last_name==cand_name).fetch()[0]
 		profile_data = {
 			"first_name" : cand.first_name,
 			"last_name" : cand.last_name,
@@ -104,6 +101,10 @@ class PersonHandler(webapp2.RequestHandler):
 			"picture" :cand.picture
 		}
 		self.response.write(person_template.render(profile_data))  # the response
+
+	def get(self):
+		person_template = the_jinja_env.get_template('templates/profile.html')
+		self.response.write(person_template.render())
 
 class RegHandler(webapp2.RequestHandler):
 	def get(self):  # for a get request
