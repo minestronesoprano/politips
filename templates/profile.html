@@ -9,73 +9,75 @@
 </head>
 <body background="../static/background2.png">
 	<div id="top">
-	<div class="side"><img src="../static/Screen Shot 2019-07-31 at 4.35.08 PM.png" alt="PoliTips Logo" width="150" height="150"></div>
-	<section id="header">
-		<h1><b>Political Candidates</b></h1>
-		<h4>United States Presidential Election 2020</h4>
-	</section>
-	<div class="side"></div>
-</div>
-<section id="navigation">
-<ul>
-	<li><a href="/">Home</a></li>
-	<li><a href="/candidate">Candidates</a></li>
-	<li><a href="/register">Registration Rules</a></li>
-	<li><a href="/pollingplace">Polling Place</a></li>
-	</section>
+		<div class="side"><img src="../static/Screen Shot 2019-07-31 at 4.35.08 PM.png" alt="PoliTips Logo" width="150" height="150"></div>
+		<section id="header">
+			<h1><b>Political Candidates</b></h1>
+			<h4>United States Presidential Election 2020</h4>
+		</section>
+		<div class="side"></div>
+	</div>
+	<section id="navigation">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/candidate">Candidates</a></li>
+			<li><a href="/register">Registration Rules</a></li>
+			<li><a href="/pollingplace">Polling Place</a></li>
+		</section>
+		<div style="text-align:center;">
+			<h4 class="headers" style="color:#DF0000;font-size: 20px;padding: 0px;padding-left: 10px;padding-right: 10px;">Choose Your Candidate: </h4>
+			<form class="in_states" id="states_drpdwn" method="post" action="">
+				<select name="cands_list">
+					<option></option>
+					<option>Michael Bennet</option>
+					<option>Joe Biden</option>
+					<option>Cory Booker</option>
+					<option>Steve Bullock</option>
+					<option>Pete Buttigieg</option>
+					<option>Julian Castro</option>
+					<option>Bill de Blasio</option>
+					<option>John Delany</option>
+					<option>Tulsi Gabbard</option>
+					<option>Kirsten Gillibrand</option>
+					<option>Kamala Harris</option>
+					<option>Jay Inslee</option>
+					<option>Amy Klobuchar</option>
+					<option>Wayne Messam</option>
+					<option>Seth Moulton</option>
+					<option>Beto O'Rourke</option>
+					<option>Tim Ryan</option>
+					<option>Bernie Sanders</option>
+					<option>Joe Sestak</option>
+					<option>Tom Steyer</option>
+					<option>Donald Trump</option>
+					<option>Elizabeth Warren</option>
+					<option>Bill Weld</option>
+					<option>Marianne Williamson</option>
+					<option>Andrew Yang</option>
+				</select>
+				<input type="submit" value="Go!">
+			</form>
+			<div id="hide" style="margin:auto;align-content:center;display:none;">
+				<script type="text/javascript">
 
-	<form class="in_states" id="states_drpdwn" method="post" action="">
-		<select name="cands_list">
-			<option></option>
-			<option>Michael Bennet</option>
-			<option>Joe Biden</option>
-			<option>Cory Booker</option>
-			<option>Steve Bullock</option>
-			<option>Pete Buttigieg</option>
-			<option>Julian Castro</option>
-			<option>Bill de Blasio</option>
-			<option>John Delany</option>
-			<option>Tulsi Gabbard</option>
-			<option>Kirsten Gillibrand</option>
-			<option>Kamala Harris</option>
-			<option>Jay Inslee</option>
-			<option>Amy Klobuchar</option>
-			<option>Wayne Messam</option>
-			<option>Seth Moulton</option>
-			<option>Beto O'Rourke</option>
-			<option>Tim Ryan</option>
-			<option>Bernie Sanders</option>
-			<option>Joe Sestak</option>
-			<option>Tom Steyer</option>
-			<option>Donald Trump</option>
-			<option>Elizabeth Warren</option>
-			<option>Bill Weld</option>
-			<option>Marianne Williamson</option>
-			<option>Andrew Yang</option>
-		</select>
-		<input type="submit" value="Go!">
-	</form>
-	<div id="hide" style="margin:auto;align-content:center;display:none;">
-		<script type="text/javascript">
+				var hide = document.getElementById("hide")
+				hide.style.display="block"
 
-			var hide = document.getElementById("hide")
-			hide.style.display="block"
-
-		</script>
-		<div class="information" style="border:12px black">
-			<h1>{{first_name}} {{last_name}}</h1>
-			<div class="profile_info">
-				<div class="candidate_picture">
-					<img src="{{picture}}" alt="" height="200px">
-				</div>
-				<div class="profile">
-					<h2>{{p}}{{party}}</h2>
-					<h3>{{s}}{{state_of_origin}}</h3>
-					<h3>{{r}}{{previous_job_or_pos}}</h3>
+				</script>
+				<div class="information">
+					<h1>{{first_name}} {{last_name}}</h1>
+					<div class="profile_info">
+						<div class="candidate_picture">
+							<img src="{{picture}}" alt="" height="200px">
+						</div>
+						<div class="profile">
+							<h2>{{p}}{{party}}</h2>
+							<h3>{{s}}{{state_of_origin}}</h3>
+							<h3>{{r}}{{previous_job_or_pos}}</h3>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
+	</body>
 
-</html>
+	</html>

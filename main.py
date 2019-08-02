@@ -101,7 +101,7 @@ class PersonHandler(webapp2.RequestHandler):
 			"picture" :cand.picture,
 			"p":"Political Party: ",
 			"s":"State: ",
-			"r":"Previous Position: "
+			"r":"Current Position: "
 		}
 		self.response.write(person_template.render(profile_data))  # the response
 
